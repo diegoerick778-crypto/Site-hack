@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>ALERTA</title>
+<meta charset="UTF-8">
+<title>ALERTA MALWARE</title>
 <style>
 body {
   background-color: black;
   color: red;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   text-align: center;
-  margin-top: 20%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Garante que o conteúdo fique centralizado na tela toda */
+  cursor: pointer; /* Mostra ao usuário que a tela é clicável */
 }
 h1 {
   font-size: 50px;
@@ -20,7 +27,22 @@ h1 {
 </style>
 </head>
 <body>
-<h1>VOCÊ FOI HACKEADO</h1>
-<p>SEU SISTEMA FOI COMPROMETIDO 💀</p>
+
+<div>
+  <h1>VOCÊ FOI HACKEADO</h1>
+  <p>SEU SISTEMA FOI COMPROMETIDO 💀</p>
+</div>
+
+<script>
+  // Ativa a tela inteira assim que o usuário clicar em qualquer lugar da página
+  document.body.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch((err) => {
+        console.log(`Erro ao ativar tela inteira: ${err.message}`);
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
